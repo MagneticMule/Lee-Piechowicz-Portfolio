@@ -6,6 +6,7 @@ import { imageUrlFor } from "../lib/image-url";
 import BlockContent from "./block-content";
 import Container from "./container";
 import RoleList from "./role-list";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import * as styles from "./project.module.css";
 
@@ -15,12 +16,7 @@ function Project(props) {
     <article className={styles.root}>
       {props.mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
-          <img
-            src={imageUrlFor(buildImageObj(mainImage))
-              .width(1200)
-              .height(Math.floor((9 / 16) * 1200))
-              .fit("crop")
-              .url()}
+          <GatsbyImage image={getImage(mainImage.asset.gatsbyImageData)}
             alt={mainImage.alt}
           />
         </div>

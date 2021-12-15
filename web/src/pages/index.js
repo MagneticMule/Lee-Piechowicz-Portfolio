@@ -45,6 +45,10 @@ export const query = graphql`
             }
             asset {
               _id
+              gatsbyImageData(
+                fit: FILLMAX
+                placeholder: BLURRED
+            )
             }
             alt
           }
@@ -73,8 +77,8 @@ const IndexPage = props => {
   const site = (data || {}).site;
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
+      .filter(filterOutDocsWithoutSlugs)
+      .filter(filterOutDocsPublishedInTheFuture)
     : [];
 
   if (!site) {

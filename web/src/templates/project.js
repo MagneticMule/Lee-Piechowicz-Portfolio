@@ -41,6 +41,10 @@ export const query = graphql`
         }
         asset {
           _id
+          gatsbyImageData(
+            fit: FILLMAX
+            placeholder: BLURRED
+          )
         }
         alt
       }
