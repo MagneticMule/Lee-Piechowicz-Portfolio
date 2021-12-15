@@ -1,0 +1,17 @@
+[[plugins]]
+  	package = "netlify-plugin-gatsby-cache"
+
+[[plugins]]
+		package = "@netlify/plugin-gatsby"
+
+
+
+[[headers]]
+# Define which paths this specific [[headers]] block will cover.
+for = "/*"
+	[headers.values]
+	Access-Control-Allow-Origin = "*"
+
+# [build]
+#   command = "yarn build"
+#   publish = "public/"
